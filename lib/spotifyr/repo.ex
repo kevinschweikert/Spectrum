@@ -1,5 +1,3 @@
 defmodule Spotifyr.Repo do
-  use Ecto.Repo,
-    otp_app: :spotifyr,
-    adapter: Ecto.Adapters.Postgres
+  use AshSqlite.Repo, otp_app: :spotifyr
 end

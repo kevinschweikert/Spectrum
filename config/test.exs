@@ -6,11 +6,7 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :spotifyr, Spotifyr.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "spotifyr_test#{System.get_env("MIX_TEST_PARTITION")}",
-  pool: Ecto.Adapters.SQL.Sandbox,
+  database: Path.join(__DIR__, "../test/spotifyr_#{System.get_env("MIX_TEST_PARTITION")}.db"),
   pool_size: 10
 
 # We don't run a server during test. If one is required,

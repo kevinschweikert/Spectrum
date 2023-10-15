@@ -9,7 +9,8 @@ import Config
 
 config :spotifyr,
   ecto_repos: [Spotifyr.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  ash_apis: [Spotifyr.Accounts]
 
 # Configures the endpoint
 config :spotifyr, SpotifyrWeb.Endpoint,

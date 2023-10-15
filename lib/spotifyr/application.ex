@@ -16,6 +16,7 @@ defmodule Spotifyr.Application do
       {Finch, name: Spotifyr.Finch},
       # Start a worker by calling: Spotifyr.Worker.start_link(arg)
       # {Spotifyr.Worker, arg},
+      {AshAuthentication.Supervisor, otp_app: :spotifyr},
       # Start to serve requests, typically the last entry
       SpotifyrWeb.Endpoint
     ]

@@ -2,11 +2,7 @@ import Config
 
 # Configure your database
 config :spotifyr, Spotifyr.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "spotifyr_dev",
-  stacktrace: true,
+  database: Path.join(__DIR__, "../spotifyr.db"),
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
