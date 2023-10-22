@@ -41,7 +41,7 @@ defmodule SpotifyrWeb.CoreComponents do
   attr :on_cancel, JS, default: %JS{}
   slot :inner_block, required: true
 
-  def modal(assigns) do
+  def core_modal(assigns) do
     ~H"""
     <div
       id={@id}
@@ -201,7 +201,7 @@ defmodule SpotifyrWeb.CoreComponents do
   def simple_form(assigns) do
     ~H"""
     <.form :let={f} for={@for} as={@as} {@rest}>
-      <div class="mt-10 space-y-8 bg-white">
+      <div class="mt-10 space-y-8">
         <%= render_slot(@inner_block, f) %>
         <div :for={action <- @actions} class="mt-2 flex items-center justify-between gap-6">
           <%= render_slot(action, f) %>
@@ -225,7 +225,7 @@ defmodule SpotifyrWeb.CoreComponents do
 
   slot :inner_block, required: true
 
-  def button(assigns) do
+  def core_button(assigns) do
     ~H"""
     <button
       type={@type}
@@ -396,7 +396,7 @@ defmodule SpotifyrWeb.CoreComponents do
 
   def label(assigns) do
     ~H"""
-    <label for={@for} class="block text-sm font-semibold leading-6 text-zinc-800">
+    <label for={@for} class="block text-sm font-semibold leading-6 text-zinc-300">
       <%= render_slot(@inner_block) %>
     </label>
     """
@@ -466,7 +466,7 @@ defmodule SpotifyrWeb.CoreComponents do
 
   slot :action, doc: "the slot for showing user actions in the last table column"
 
-  def table(assigns) do
+  def core_table(assigns) do
     assigns =
       with %{rows: %Phoenix.LiveView.LiveStream{}} <- assigns do
         assign(assigns, row_id: assigns.row_id || fn {id, _item} -> id end)
