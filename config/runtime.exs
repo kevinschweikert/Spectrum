@@ -28,12 +28,12 @@ if config_env() == :prod do
     show_sensitive_data_on_connection_error: false,
     pool_size: 10
 
-  if not is_nil(System.get_env("SPOTIFY_CLIENT_KEY")) and
-       not is_nil(System.get_env("SPOTIFY_SECRET_KEY")) do
-    config :spotify_ex,
-      client_id: System.get_env("SPOTIFY_CLIENT_KEY"),
-      secret_key: System.get_env("SPOTIFY_SECRET_KEY")
-  end
+  client_id = System.get_env("SPOTIFY_CLIENT_ID") || raise("SPOTIFY_CLIENT_ID is missing!")
+  secret_key = System.get_env("SPOTIFY_SECRET_KEY") || raise("SPOTIFY_SECRET_KEY is missing!")
+
+  config :spotify_ex,
+    client_id: System.get_env("SPOTIFY_CLIENT_ID"),
+    secret_key: System.get_env("SPOTIFY_SECRET_KEY")
 
   # The secret key base is used to sign/encrypt cookies and other secrets.
   # A default value is used in config/dev.exs and config/test.exs but you

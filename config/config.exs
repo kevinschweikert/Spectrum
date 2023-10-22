@@ -8,7 +8,9 @@
 import Config
 
 import_config "secret.exs"
-import_config "spotify.exs"
+
+config :spotify_ex,
+  scopes: ["user-read-private", "playlist-read-private", "playlist-modify-private"]
 
 config :spotifyr,
   ecto_repos: [Spotifyr.Repo],

@@ -6,6 +6,9 @@ config :spotifyr, Spotifyr.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+config :spotify_ex,
+  callback_url: "http://localhost:4000/authenticate"
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
