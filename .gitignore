@@ -36,7 +36,7 @@ npm-debug.log
 /assets/node_modules/
 
 
-spotifyr.db*
+spotifyr*.db*
 
 config/spotify.exs
 config/secret.exs

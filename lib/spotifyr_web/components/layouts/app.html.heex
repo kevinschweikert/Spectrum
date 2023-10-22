@@ -1,6 +1,8 @@
 <header class="m-4 px-4 sm:px-6 lg:px-8 gap-2 flex flex-row justify-between">
   <div>
-    <.link href={~p"/"}><.h3>Spotifyr</.h3></.link>
+    <.link href={~p"/"}>
+      <.h3>Spotifyr</.h3>
+    </.link>
   </div>
   <div class="gap-2 flex flex-row">
     <%= if @current_user do %>
@@ -17,7 +19,7 @@
         href={~p"/spotify/logout"}
         class="rounded-lg bg-zinc-400 px-2 py-1 text-[0.8125rem] font-semibold leading-6 text-zinc-900 hover:bg-zinc-200/80 active:text-zinc-900/70"
       >
-         Logout Spotify
+        Logout Spotify
       </.link>
     <% else %>
       <a
