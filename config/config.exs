@@ -7,6 +7,9 @@
 # General application configuration
 import Config
 
+import_config "secret.exs"
+import_config "spotify.exs"
+
 config :spotifyr,
   ecto_repos: [Spotifyr.Repo],
   generators: [timestamp_type: :utc_datetime],

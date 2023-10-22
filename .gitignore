@@ -37,3 +37,6 @@ npm-debug.log
 
 
 spotifyr.db*
+
+config/spotify.exs
+config/secret.exs
