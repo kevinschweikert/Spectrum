@@ -54,7 +54,8 @@ defmodule Spotifyr.MixProject do
       {:ash_sqlite, "~> 0.1.1"},
       {:ash_authentication, "~> 3.11"},
       {:ash_authentication_phoenix, "~> 1.8"},
-      {:spotify_ex, "~> 2.3"}
+      {:spotify_ex, "~> 2.3"},
+      {:petal_components, "~> 1.0"}
     ]
   end
 
