@@ -7,6 +7,8 @@ defmodule Spotifyr.Application do
 
   @impl true
   def start(_type, _args) do
+    Spotifyr.Release.migrate()
+
     children = [
       SpotifyrWeb.Telemetry,
       Spotifyr.Repo,

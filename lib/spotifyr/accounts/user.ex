@@ -16,7 +16,7 @@ defmodule Spotifyr.Accounts.User do
   code_interface do
     define_for Spotifyr.Accounts
     define :spotify_credentials, args: [:user_id]
-    define :update_spotify_credentials, args: [:credentials, {:optional, :last_refresh}]
+    define :update_spotify_credentials, args: [:credentials]
   end
 
   actions do
@@ -44,10 +44,6 @@ defmodule Spotifyr.Accounts.User do
         constraints instance_of: Spotify.Credentials
       end
 
-      argument :last_refresh, :utc_datetime do
-        default &DateTime.utc_now/0
-      end
-
       change fn changeset, _ ->
         case Ash.Changeset.fetch_argument(changeset, :credentials) do
           {:ok, credentials} ->
@@ -59,8 +55,6 @@ defmodule Spotifyr.Accounts.User do
             changeset
         end
       end
-
-      change set_attribute(:spotify_last_refresh, arg(:last_refresh))
     end
   end
 

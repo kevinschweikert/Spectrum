@@ -14,12 +14,10 @@ defmodule SpotifyrWeb.SpotifyController do
   def authenticate(conn, params) do
     creds =
       Spotifyr.Spotify.credentials(conn.assigns.current_user.id) ||
-        Spotify.Credentials.new(params)
+        Spotify.Credentials.new(conn)
 
     case Spotify.Authentication.authenticate(creds, params) do
       {:ok, creds} ->
-        dbg(creds)
-
         case Spotifyr.Spotify.save_credentials(conn.assigns.current_user, creds) do
           {:ok, user} ->
             conn |> assign(:current_user, user)

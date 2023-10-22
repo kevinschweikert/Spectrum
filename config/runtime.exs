@@ -21,8 +21,19 @@ if System.get_env("PHX_SERVER") do
 end
 
 if config_env() == :prod do
-  config :helpdesk, Helpdesk.Repo,
-    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
+  database_path = System.get_env("DATABASE_PATH") || raise("DATABASE_PATH is missing!")
+
+  config :spotifyr, Spotifyr.Repo,
+    database: database_path,
+    show_sensitive_data_on_connection_error: false,
+    pool_size: 10
+
+  if not is_nil(System.get_env("SPOTIFY_CLIENT_KEY")) and
+       not is_nil(System.get_env("SPOTIFY_SECRET_KEY")) do
+    config :spotify_ex,
+      client_id: System.get_env("SPOTIFY_CLIENT_KEY"),
+      secret_key: System.get_env("SPOTIFY_SECRET_KEY")
+  end
 
   # The secret key base is used to sign/encrypt cookies and other secrets.
   # A default value is used in config/dev.exs and config/test.exs but you
@@ -52,6 +63,9 @@ if config_env() == :prod do
       port: port
     ],
     secret_key_base: secret_key_base
+
+  config :spotify_ex,
+    callback_url: "https://#{host}/authenticate"
 
   # ## SSL Support
   #
