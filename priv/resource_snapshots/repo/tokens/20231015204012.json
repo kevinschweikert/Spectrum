@@ -73,7 +73,7 @@
   ],
   "table": "tokens",
   "hash": "CDFDCC3B1D9CB33625773B2D18D2E73D41C48DCB44B4153EDB8977C6B193EDAF",
-  "repo": "Elixir.Spotifyr.Repo",
+  "repo": "Elixir.Spectrum.Repo",
   "identities": [],
   "multitenancy": {
     "global": null,

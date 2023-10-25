@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(Spotifyr.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Spectrum.Repo, :manual)

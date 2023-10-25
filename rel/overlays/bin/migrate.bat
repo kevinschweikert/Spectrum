@@ -1,1 +1,1 @@
-call "%~dp0\spotifyr" eval Spotifyr.Release.migrate
+call "%~dp0\spectrum" eval Spectrum.Release.migrate

@@ -12,20 +12,20 @@ import_config "secret.exs"
 config :spotify_ex,
   scopes: ["user-read-private", "playlist-read-private", "playlist-modify-private"]
 
-config :spotifyr,
-  ecto_repos: [Spotifyr.Repo],
+config :spectrum,
+  ecto_repos: [Spectrum.Repo],
   generators: [timestamp_type: :utc_datetime],
-  ash_apis: [Spotifyr.Accounts]
+  ash_apis: [Spectrum.Accounts]
 
 # Configures the endpoint
-config :spotifyr, SpotifyrWeb.Endpoint,
+config :spectrum, SpectrumWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Phoenix.Endpoint.Cowboy2Adapter,
   render_errors: [
-    formats: [html: SpotifyrWeb.ErrorHTML, json: SpotifyrWeb.ErrorJSON],
+    formats: [html: SpectrumWeb.ErrorHTML, json: SpectrumWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: Spotifyr.PubSub,
+  pubsub_server: Spectrum.PubSub,
   live_view: [signing_salt: "2iVLzr+7"]
 
 # Configures the mailer
@@ -35,7 +35,7 @@ config :spotifyr, SpotifyrWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :spotifyr, Spotifyr.Mailer, adapter: Swoosh.Adapters.Local
+config :spectrum, Spectrum.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,

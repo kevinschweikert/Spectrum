@@ -8,8 +8,8 @@ const path = require("path")
 module.exports = {
   content: [
     "./js/**/*.js",
-    "../lib/spotifyr_web.ex",
-    "../lib/spotifyr_web/**/*.*ex",
+    "../lib/spectrum_web.ex",
+    "../lib/spectrum_web/**/*.*ex",
     "../deps/ash_authentication_phoenix/**/*.ex",
     "../deps/petal_components/**/*.*ex",
   ],

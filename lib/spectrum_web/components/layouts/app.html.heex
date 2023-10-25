@@ -1,0 +1,40 @@
+<header class="m-4 px-4 sm:px-6 lg:px-8 gap-2 flex flex-row justify-between">
+  <div>
+    <.link href={~p"/"}>
+      <.h3>Spectrum</.h3>
+    </.link>
+  </div>
+  <div class="gap-2 flex flex-row">
+    <%= if @current_user do %>
+      <span class="px-3 py-2 text-sm font-medium text-white rounded-md">
+        <%= @current_user.email %>
+      </span>
+      <a
+        href="/sign-out"
+        class="rounded-lg bg-zinc-100 px-2 py-1 text-[0.8125rem] font-semibold leading-6 text-zinc-900 hover:bg-zinc-200/80 active:text-zinc-900/70"
+      >
+        Sign out
+      </a>
+      <.link
+        href={~p"/spotify/logout"}
+        class="rounded-lg bg-zinc-400 px-2 py-1 text-[0.8125rem] font-semibold leading-6 text-zinc-900 hover:bg-zinc-200/80 active:text-zinc-900/70"
+      >
+        Logout Spotify
+      </.link>
+    <% else %>
+      <a
+        href="/sign-in"
+        class="rounded-lg bg-zinc-100 px-2 py-1 text-[0.8125rem] font-semibold leading-6 text-zinc-900 hover:bg-zinc-200/80 active:text-zinc-900/70"
+      >
+        Sign In
+      </a>
+      >
+    <% end %>
+  </div>
+</header>
+<main class="px-4 py-20 sm:px-6 lg:px-8 h-full">
+  <div class="mx-auto h-full max-w-2xl">
+    <.flash_group flash={@flash} />
+    <%= @inner_content %>
+  </div>
+</main>

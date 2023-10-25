@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for spotifyr on 2023-10-22T21:58:51+02:00
+# fly.toml app configuration file generated for spectrum on 2023-10-22T21:58:51+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "spotifyr"
+app = "spectrum"
 primary_region = "ams"
 kill_signal = "SIGTERM"
 swap_size_mb = 512
@@ -14,9 +14,9 @@ swap_size_mb = 512
   # release_command = "/app/bin/migrate"
 
 [env]
-  PHX_HOST = "spotifyr.fly.dev"
+  PHX_HOST = "spectrum.fly.dev"
   PORT = "8080"
-  DATABASE_PATH = "/data/spotifyr.db"
+  DATABASE_PATH = "/data/spectrum.db"
 
 [http_service]
   internal_port = 8080
@@ -31,5 +31,5 @@ swap_size_mb = 512
     soft_limit = 1000
 
 [mounts]
-    source="spotifyr_data"
+    source="spectrum_data"
     destination="/data"

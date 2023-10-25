@@ -1,4 +1,4 @@
-defmodule Spotifyr.Repo.Migrations.AddSpotifyCreds do
+defmodule Spectrum.Repo.Migrations.AddSpotifyCreds do
   @moduledoc """
   Updates resources based on their most recent snapshots.
 

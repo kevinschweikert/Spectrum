@@ -1,9 +1,9 @@
-defmodule Spotifyr.MixProject do
+defmodule Spectrum.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :spotifyr,
+      app: :spectrum,
       version: "0.1.0",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule Spotifyr.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Spotifyr.Application, []},
+      mod: {Spectrum.Application, []},
       extra_applications: [:logger, :runtime_tools, :spotify_ex]
     ]
   end

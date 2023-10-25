@@ -1,4 +1,4 @@
-defmodule Spotifyr.Repo.Migrations.RemoveSpotifyTokenTimestamp do
+defmodule Spectrum.Repo.Migrations.RemoveSpotifyTokenTimestamp do
   @moduledoc """
   Updates resources based on their most recent snapshots.
 

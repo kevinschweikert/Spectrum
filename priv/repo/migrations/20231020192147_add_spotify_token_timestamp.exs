@@ -1,4 +1,4 @@
-defmodule Spotifyr.Repo.Migrations.MigrateResources1 do
+defmodule Spectrum.Repo.Migrations.MigrateResources1 do
   @moduledoc """
   Updates resources based on their most recent snapshots.
 

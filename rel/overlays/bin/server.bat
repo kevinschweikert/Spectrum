@@ -1,2 +1,2 @@
 set PHX_SERVER=true
-call "%~dp0\spotifyr" start
+call "%~dp0\spectrum" start

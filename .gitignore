@@ -23,7 +23,7 @@ erl_crash.dump
 /tmp/
 
 # Ignore package tarball (built via "mix hex.build").
-spotifyr-*.tar
+spectrum-*.tar
 
 # Ignore assets that are produced by build tools.
 /priv/static/assets/
@@ -36,7 +36,7 @@ npm-debug.log
 /assets/node_modules/
 
 
-spotifyr*.db*
+spectrum*.db*
 
 config/spotify.exs
 config/secret.exs

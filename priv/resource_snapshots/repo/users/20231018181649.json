@@ -53,7 +53,7 @@
   ],
   "table": "users",
   "hash": "352D77226DC4C81313B5CF9641E95503369E7B765BEAECA2F828AEB9E401C5E4",
-  "repo": "Elixir.Spotifyr.Repo",
+  "repo": "Elixir.Spectrum.Repo",
   "identities": [
     {
       "name": "unique_email",

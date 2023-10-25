@@ -1,4 +1,4 @@
-defmodule Spotifyr.Repo.Migrations.AddUserAndToken do
+defmodule Spectrum.Repo.Migrations.AddUserAndToken do
   @moduledoc """
   Updates resources based on their most recent snapshots.
 
